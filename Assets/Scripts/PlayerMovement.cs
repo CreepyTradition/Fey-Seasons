@@ -3,7 +3,11 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     [SerializeField] private float speed;
+    [SerializeField] private AudioClip movement;
     private Rigidbody2D rb;
+    private Animator anim;
+
+    private bool grounded;
     private bool isGrounded;
 
     private void Awake()
@@ -11,6 +15,8 @@ public class PlayerMovement : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
 
         rb.freezeRotation = true;
+
+        anim = GetComponent<Animator>();
     }
 
     private void Update()
@@ -29,17 +35,22 @@ public class PlayerMovement : MonoBehaviour
             transform.localScale = new Vector3(-1, 1, 1);
         }
 
-        if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
+        if (Input.GetKeyDown(KeyCode.Space) && grounded)
         {
-            rb.velocity = new Vector2(rb.velocity.x, speed);
+            Jump();
         }
+
+        //Set animator parameters
+        anim.SetBool("run", horizontalInput != 0);
+        anim.SetBool("grounded", grounded);
     }
+
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Ground"))
         {
-            isGrounded = true;
+            grounded = true;
         }
     }
 
@@ -47,7 +58,17 @@ public class PlayerMovement : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Ground"))
         {
-            isGrounded = false;
+            grounded = false;
         }
     }
+
+    private void Jump()
+    {
+       SoundManager.instance.PlaySound(movement);
+       rb.velocity = new Vector2(rb.velocity.x, speed);
+       anim.SetTrigger("jump");
+       grounded = false;
+    }
+
+    
 }

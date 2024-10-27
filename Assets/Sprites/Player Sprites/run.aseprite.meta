@@ -35,7 +35,7 @@ ScriptedImporter:
     spriteMeshType: 1
     alignment: 0
     spritePivot: {x: 0.5, y: 0.5}
-    spritePixelsToUnits: 100
+    spritePixelsToUnits: 20
     spriteBorder: {x: 0, y: 0, z: 0, w: 0}
     spriteGenerateFallbackPhysicsShape: 0
     generateCubemap: 6
@@ -97,7 +97,7 @@ ScriptedImporter:
     addSortingGroup: 1
     addShadowCasters: 0
   importFileNodeState: 1
-  platformSettingsDirtyTick: 0
+  platformSettingsDirtyTick: 638656323610245180
   textureAssetName: 
   singleSpriteImportData:
   - name: 
@@ -290,7 +290,7 @@ ScriptedImporter:
     layerType: 0
     blendMode: 0
     cells:
-    - name: Frame_0
+    - name: run_Frame_0
       frameIndex: 0
       additiveSortOrder: 0
       cellRect:
@@ -299,7 +299,7 @@ ScriptedImporter:
         width: 22
         height: 36
       spriteId: 354dd4756e19aba43872deecdf6013b6
-    - name: Frame_1
+    - name: run_Frame_1
       frameIndex: 1
       additiveSortOrder: 0
       cellRect:
@@ -308,7 +308,7 @@ ScriptedImporter:
         width: 26
         height: 33
       spriteId: 6d3013cf7c893e346b468259c55b5e3c
-    - name: Frame_2
+    - name: run_Frame_2
       frameIndex: 2
       additiveSortOrder: 0
       cellRect:
@@ -317,7 +317,7 @@ ScriptedImporter:
         width: 28
         height: 36
       spriteId: dc54f2fdb51dbf74faf112ed1f24a59f
-    - name: Frame_3
+    - name: run_Frame_3
       frameIndex: 3
       additiveSortOrder: 0
       cellRect:
@@ -326,7 +326,7 @@ ScriptedImporter:
         width: 25
         height: 38
       spriteId: 81adb02b69b1ef34eb1572ee9ff6f177
-    - name: Frame_4
+    - name: run_Frame_4
       frameIndex: 4
       additiveSortOrder: 0
       cellRect:
@@ -335,7 +335,7 @@ ScriptedImporter:
         width: 22
         height: 37
       spriteId: 6506710a2d949f04f8f9a09e28164065
-    - name: Frame_5
+    - name: run_Frame_5
       frameIndex: 5
       additiveSortOrder: 0
       cellRect:
@@ -344,7 +344,7 @@ ScriptedImporter:
         width: 27
         height: 34
       spriteId: 68bd1aab1c550c5429529370f3a15616
-    - name: Frame_6
+    - name: run_Frame_6
       frameIndex: 6
       additiveSortOrder: 0
       cellRect:
@@ -353,7 +353,7 @@ ScriptedImporter:
         width: 29
         height: 37
       spriteId: 86e4862817ef578438ab6469010cd188
-    - name: Frame_7
+    - name: run_Frame_7
       frameIndex: 7
       additiveSortOrder: 0
       cellRect:
@@ -366,6 +366,30 @@ ScriptedImporter:
     parentIndex: -1
   platformSettings:
   - name: Default
+    overridden: 0
+    ignorePlatformSupport: 0
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    androidETC2FallbackOverride: 0
+  - name: DefaultTexturePlatform
+    overridden: 0
+    ignorePlatformSupport: 0
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    androidETC2FallbackOverride: 0
+  - name: Standalone
     overridden: 0
     ignorePlatformSupport: 0
     maxTextureSize: 2048
