@@ -1,14 +1,15 @@
-using UnityEditor.Callbacks;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Health : MonoBehaviour
 {
-    [Header ("Player Died")]
+    [Header("Player Died")]
     [SerializeField] private AudioClip playerDied;
     [SerializeField] private float startingHealth;
     public float currentHealth { get; private set; }
     private Animator anim;
     private bool dead;
+
     private void Awake()
     {
         currentHealth = startingHealth;
@@ -18,7 +19,7 @@ public class Health : MonoBehaviour
     public void Respawn()
     {
         dead = false;
-        
+
         anim.ResetTrigger("die");
         anim.Play("idlee");
     }
@@ -29,7 +30,7 @@ public class Health : MonoBehaviour
 
         if (currentHealth > 0)
         {
-            anim.SetTrigger("hurt");    
+            anim.SetTrigger("hurt");
         }
         else
         {
@@ -39,8 +40,15 @@ public class Health : MonoBehaviour
                 anim.SetTrigger("die");
                 GetComponent<PlayerMovement>().enabled = false;
                 dead = true;
-                
+
+                // Invoke the "LoadLoseScene" method after a delay
+                Invoke("LoadLoseScene", 2.0f); // 2 seconds delay
             }
         }
+    }
+
+    private void LoadLoseScene()
+    {
+        SceneManager.LoadScene("LoseScene");
     }
 }
